@@ -1,11 +1,11 @@
 def positives_and_negatives_sums(*args):
-    positives = 0
-    negatives = 0
-    for i in args:
-        if i > 0:
-            positives += i
-        else:
-            negatives += i
+    positives = sum([x for x in args if x > 0])
+    negatives = sum([x for x in args if x < 0])
+    # for i in args:
+    #     if i > 0:
+    #         positives += i
+    #     else:
+    #         negatives += i
     return positives, negatives
 
 
