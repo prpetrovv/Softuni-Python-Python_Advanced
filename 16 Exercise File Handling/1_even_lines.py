@@ -1,9 +1,7 @@
 symbols_to_replace = {"-", ",", ".", "!", "?"}
 with open("text.txt", "r") as my_file:
     file_information = my_file.readlines()
-for row in file_information:
+for row in range(0, len(file_information), 2):
     for symbol in symbols_to_replace:
-        row = row.replace(symbol, "@")
-    reversed_row = row.split()
-    reversed_row.reverse()
-    print(''.join(reversed_row))
+        file_information[row] = file_information[row].replace(symbol, "@")
+    print(*file_information[row].split()[::-1], sep=" ")
